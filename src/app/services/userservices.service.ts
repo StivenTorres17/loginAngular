@@ -5,6 +5,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
   providedIn: 'root'
 })
 export class UserservicesService {
+  [x: string]: any;
   //? Define la URL de la API para el endpoint de inicio de sesión
   private ApiUrl = "http://localhost:3000/users/login";
 

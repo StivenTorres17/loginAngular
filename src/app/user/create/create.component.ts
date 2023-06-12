@@ -8,10 +8,16 @@ import { UserservicesService } from 'src/app/services/userservices.service';
 })
 export class CreateComponent implements OnInit {
   isOpened = false; //? Bandera para controlar si el modal está abierto o no
-  email: string = ""; //? Variable para almacenar el valor del campo de correo electrónico
-  password: string = ""; //? Variable para almacenar el valor del campo de contraseña
+  username!:string;
+  email!:string; //? Variable para almacenar el valor del campo de correo electrónico
+  password!:string; //? Variable para almacenar el valor del campo de contraseña
 
   constructor(private userService: UserservicesService) {}
+
+  createUser():void{
+    this.userService['create'](this.username,this.email,this.password)
+      console.log("user created");
+  }
 
   ngOnInit() {
     const body = document.querySelector("body") as HTMLElement; //? Referencia al elemento <body> del DOM
